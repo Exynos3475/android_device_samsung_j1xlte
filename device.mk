@@ -27,7 +27,6 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Boot animation
 TARGET_SCREEN_WIDTH := 540
 TARGET_SCREEN_HEIGHT := 960
-TARGET_BOOTANIMATION_HALF_RES := true
 
 # Flat device tree for boot image
 PRODUCT_PACKAGES += \
