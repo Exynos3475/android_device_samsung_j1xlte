@@ -1,2 +1,3 @@
-Device configuration for the Samsung Galaxy J2 (j2lte)
+Device configuration for the Samsung Galaxy J1 (2016) (j1xlte)
+
 WIP for now

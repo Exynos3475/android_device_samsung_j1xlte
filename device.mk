@@ -16,7 +16,7 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-LOCAL_PATH := device/samsung/j2lte
+LOCAL_PATH := device/samsung/j1xlte
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -25,8 +25,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 540
-TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 480
+TARGET_SCREEN_HEIGHT := 800
 
 # Flat device tree for boot image
 PRODUCT_PACKAGES += \
@@ -35,13 +35,17 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal3475 \
+    fstab.unknown \
     init.baseband.rc \
     init.rilchip.rc \
     init.samsung.rc \
     init.universal3475.rc \
     init.universal3475.usb.rc \
     init.wifi.rc \
-    ueventd.universal3475.rc
+    ueventd.universal3475.rc \
+    init.unknown.rc \
+    init.unknown.usb.rc \
+    ueventd.unknown.rc
 
 # cpboot-daemon
 PRODUCT_COPY_FILES += \
@@ -138,6 +142,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
+
 # Keys
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:/system/usr/keylayout/sec_touchkey.kl \
@@ -173,7 +178,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	persist.sys.usb.config=mtp,adb \
 	ro.secure=0 \
 	ro.adb.secure=0 \
-        ro.hardware=universal3475
+	ro.debuggable=1 \
+    ro.hardware=universal3475
 
 # Dalvik Heap
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
@@ -186,4 +192,4 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos3475/exynos3475.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/j2lte/j2lte-vendor.mk)
+$(call inherit-product, vendor/samsung/j1xlte/j1xlte-vendor.mk)

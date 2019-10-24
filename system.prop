@@ -11,7 +11,7 @@ qcom.bluetooth.soc=rome
 
 # Graphics
 ro.opengles.version=196609
-ro.sf.lcd_density=280
+ro.sf.lcd_density=214
 debug.hwc.force_gpu=1
 lockscreen.rot_override=true
 

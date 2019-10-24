@@ -23,6 +23,14 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := fstab.unknown
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := fstab.unknown
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.baseband.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := BOOT
@@ -63,6 +71,22 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.unknown.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.unknown.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.unknown.usb.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.unknown.usb.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.wifi.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := BOOT
@@ -75,5 +99,13 @@ LOCAL_MODULE       := ueventd.universal3475.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := ueventd.universal3475.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := ueventd.unknown.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := ueventd.unknown.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)

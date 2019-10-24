@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/j2lte
+LOCAL_PATH := device/samsung/j1xlte
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -55,7 +55,7 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos3475
-TARGET_KERNEL_CONFIG := lineage-j2lte_defconfig
+TARGET_KERNEL_CONFIG := lineageos_j1xlte_defconfig
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 
 # Partitions
@@ -73,14 +73,13 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
+BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 4831838208
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2415919104
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 4970250240
 BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 202211328
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
-# TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Bluetooth
@@ -141,6 +140,7 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
 BOARD_USES_HWC_SERVICES := true
+
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -151,7 +151,6 @@ CHARGING_ENABLED_PATH := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_VENDOR := samsung
 BOARD_MODEM_TYPE := tss310
 BOARD_PROVIDES_LIBRIL := true
-SIM_COUNT := 2
 
 # RIL.java overwrite
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
@@ -160,25 +159,8 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # Recovery
-#RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal3475
-TARGET_OTA_ASSERT_DEVICE := j2lte, j2ltedd, j2ltedx
-
-# TWRP
-ifeq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_THEME := portrait_hdpi
-TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
-TW_MAX_BRIGHTNESS := 255
-TW_NO_REBOOT_BOOTLOADER := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_NTFS_3G := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_NO_EXFAT_FUSE := true
-TW_EXCLUDE_SUPERSU := true
-endif
 
 # Seccomp filters
 BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
@@ -187,4 +169,4 @@ BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # Inherit from the proprietary version
--include vendor/samsung/j2lte/BoardConfigVendor.mk
+-include vendor/samsung/j1xlte/BoardConfigVendor.mk
