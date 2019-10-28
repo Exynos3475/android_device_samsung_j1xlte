@@ -35,17 +35,13 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal3475 \
-    fstab.unknown \
     init.baseband.rc \
     init.rilchip.rc \
     init.samsung.rc \
     init.universal3475.rc \
     init.universal3475.usb.rc \
     init.wifi.rc \
-    ueventd.universal3475.rc \
-    init.unknown.rc \
-    init.unknown.usb.rc \
-    ueventd.unknown.rc
+    ueventd.universal3475.rc
 
 # cpboot-daemon
 PRODUCT_COPY_FILES += \
@@ -178,8 +174,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	persist.sys.usb.config=mtp,adb \
 	ro.secure=0 \
 	ro.adb.secure=0 \
-	ro.debuggable=1 \
-    ro.hardware=universal3475
+	ro.debuggable=1
 
 # Dalvik Heap
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
