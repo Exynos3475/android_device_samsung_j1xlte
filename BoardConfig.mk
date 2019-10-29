@@ -168,11 +168,9 @@ WITH_DEXPREOPT := true
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal3475
 
-#Init
-TARGET_UNIFIED_DEVICE := true
+# Init
 TARGET_INIT_VENDOR_LIB := libinit_j1xlte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_j1xlte
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_j1xlte.cpp
 
 # Seccomp filters
 BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
