@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-# Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=200
-
 # Dalvik/Art
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
