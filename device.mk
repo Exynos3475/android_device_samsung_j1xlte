@@ -30,11 +30,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     tinymix \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.service \
-    audio.primary.default \
-    audio.sec_primary.default \
-    libtinycompress
+    android.hardware.audio.effect@2.0-impl
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
