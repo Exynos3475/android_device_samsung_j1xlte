@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos
 
+# Touch features
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.samsung
+
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := large
