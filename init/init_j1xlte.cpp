@@ -83,6 +83,12 @@ void vendor_load_properties()
 		property_override("ro.product.model", "SM-J120ZN");
 	} else if (bl.find("J120G") != std::string::npos) {
 		property_override("ro.product.model", "SM-J120G");
+	} else if (bl.find("J120W") != std::string::npos) {
+		property_override("ro.product.model", "SM-J120W");
+	} else if (bl.find("J120A") != std::string::npos) {
+		property_override("ro.product.model", "SM-J120A");
+	} else if (bl.find("J120AZ") != std::string::npos) {
+		property_override("ro.product.model", "SM-J120AZ");
 	}
 	set_sim_info();
 }
