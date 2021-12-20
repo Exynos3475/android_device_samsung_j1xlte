@@ -195,9 +195,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal3475
 TARGET_INIT_VENDOR_LIB := libinit_j1xlte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_j1xlte
 
-# Exclude AudioFX
-TARGET_EXCLUDES_AUDIOFX := true
-
 # Seccomp filters
 BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 
